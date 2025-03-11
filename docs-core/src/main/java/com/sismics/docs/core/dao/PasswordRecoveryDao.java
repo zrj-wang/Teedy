@@ -1,7 +1,7 @@
 package com.sismics.docs.core.dao;
 
 import com.sismics.docs.core.constant.Constants;
-import com.sismics.docs.core.model.jpa.PasswordRecovery;
+import com.sismics.docs.core.event.model.jpa.PasswordRecovery;
 import com.sismics.util.context.ThreadLocalContext;
 import org.joda.time.DateTime;
 import org.joda.time.DurationFieldType;

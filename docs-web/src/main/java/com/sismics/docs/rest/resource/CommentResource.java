@@ -4,7 +4,7 @@ import com.sismics.docs.core.constant.PermType;
 import com.sismics.docs.core.dao.AclDao;
 import com.sismics.docs.core.dao.CommentDao;
 import com.sismics.docs.core.dao.dto.CommentDto;
-import com.sismics.docs.core.model.jpa.Comment;
+import com.sismics.docs.core.event.model.jpa.Comment;
 import com.sismics.rest.exception.ForbiddenClientException;
 import com.sismics.rest.util.ValidationUtil;
 import com.sismics.util.ImageUtil;

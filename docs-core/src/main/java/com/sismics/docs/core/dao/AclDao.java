@@ -5,7 +5,7 @@ import com.sismics.docs.core.constant.AclType;
 import com.sismics.docs.core.constant.AuditLogType;
 import com.sismics.docs.core.constant.PermType;
 import com.sismics.docs.core.dao.dto.AclDto;
-import com.sismics.docs.core.model.jpa.Acl;
+import com.sismics.docs.core.event.model.jpa.Acl;
 import com.sismics.docs.core.util.AuditLogUtil;
 import com.sismics.docs.core.util.SecurityUtil;
 import com.sismics.util.context.ThreadLocalContext;

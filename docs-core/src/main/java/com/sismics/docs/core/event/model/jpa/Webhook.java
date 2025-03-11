@@ -1,4 +1,4 @@
-package com.sismics.docs.core.model.jpa;
+package com.sismics.docs.core.event.model.jpa;
 
 import com.google.common.base.MoreObjects;
 import com.sismics.docs.core.constant.WebhookEvent;

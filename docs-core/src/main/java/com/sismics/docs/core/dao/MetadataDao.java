@@ -5,7 +5,7 @@ import com.sismics.docs.core.constant.AuditLogType;
 import com.sismics.docs.core.constant.MetadataType;
 import com.sismics.docs.core.dao.criteria.MetadataCriteria;
 import com.sismics.docs.core.dao.dto.MetadataDto;
-import com.sismics.docs.core.model.jpa.Metadata;
+import com.sismics.docs.core.event.model.jpa.Metadata;
 import com.sismics.docs.core.util.AuditLogUtil;
 import com.sismics.docs.core.util.jpa.QueryParam;
 import com.sismics.docs.core.util.jpa.QueryUtil;

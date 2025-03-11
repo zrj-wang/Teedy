@@ -2,7 +2,7 @@ package com.sismics.docs.core.util;
 
 import com.sismics.docs.core.constant.ConfigType;
 import com.sismics.docs.core.dao.ConfigDao;
-import com.sismics.docs.core.model.jpa.Config;
+import com.sismics.docs.core.event.model.jpa.Config;
 
 import java.util.ResourceBundle;
 

@@ -1,4 +1,4 @@
-package com.sismics.docs.core.model.jpa;
+package com.sismics.docs.core.event.model.jpa;
 
 import java.util.Date;
 

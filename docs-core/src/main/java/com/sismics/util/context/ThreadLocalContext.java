@@ -1,7 +1,7 @@
 package com.sismics.util.context;
 
 import com.google.common.collect.Lists;
-import com.sismics.docs.core.model.context.AppContext;
+import com.sismics.docs.core.event.model.context.AppContext;
 
 import jakarta.persistence.EntityManager;
 import java.util.Iterator;

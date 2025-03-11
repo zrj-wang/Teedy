@@ -25,10 +25,10 @@ import com.sismics.docs.core.event.DocumentCreatedAsyncEvent;
 import com.sismics.docs.core.event.DocumentDeletedAsyncEvent;
 import com.sismics.docs.core.event.DocumentUpdatedAsyncEvent;
 import com.sismics.docs.core.event.FileDeletedAsyncEvent;
-import com.sismics.docs.core.model.context.AppContext;
-import com.sismics.docs.core.model.jpa.Document;
-import com.sismics.docs.core.model.jpa.File;
-import com.sismics.docs.core.model.jpa.User;
+import com.sismics.docs.core.event.model.context.AppContext;
+import com.sismics.docs.core.event.model.jpa.Document;
+import com.sismics.docs.core.event.model.jpa.File;
+import com.sismics.docs.core.event.model.jpa.User;
 import com.sismics.docs.core.util.ConfigUtil;
 import com.sismics.docs.core.util.DocumentUtil;
 import com.sismics.docs.core.util.FileUtil;
@@ -55,7 +55,6 @@ import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.FormParam;
 import jakarta.ws.rs.GET;
-import jakarta.ws.rs.HEAD;
 import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
@@ -78,7 +77,6 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
@@ -87,7 +85,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
-import java.util.UUID;
 
 /**
  * Document REST resources.

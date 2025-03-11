@@ -5,7 +5,7 @@ import com.google.common.collect.Lists;
 import com.sismics.docs.core.constant.AuditLogType;
 import com.sismics.docs.core.dao.criteria.AuditLogCriteria;
 import com.sismics.docs.core.dao.dto.AuditLogDto;
-import com.sismics.docs.core.model.jpa.AuditLog;
+import com.sismics.docs.core.event.model.jpa.AuditLog;
 import com.sismics.docs.core.util.jpa.PaginatedList;
 import com.sismics.docs.core.util.jpa.PaginatedLists;
 import com.sismics.docs.core.util.jpa.QueryParam;

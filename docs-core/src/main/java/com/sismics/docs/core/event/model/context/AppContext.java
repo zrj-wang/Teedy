@@ -1,4 +1,4 @@
-package com.sismics.docs.core.model.context;
+package com.sismics.docs.core.event.model.context;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
@@ -6,8 +6,8 @@ import com.google.common.eventbus.AsyncEventBus;
 import com.google.common.eventbus.EventBus;
 import com.sismics.docs.core.constant.Constants;
 import com.sismics.docs.core.dao.UserDao;
+import com.sismics.docs.core.event.model.jpa.User;
 import com.sismics.docs.core.listener.async.*;
-import com.sismics.docs.core.model.jpa.User;
 import com.sismics.docs.core.service.FileService;
 import com.sismics.docs.core.service.FileSizeService;
 import com.sismics.docs.core.service.InboxService;

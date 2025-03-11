@@ -1,10 +1,9 @@
 package com.sismics.docs.core.util;
 
 import com.google.common.collect.Lists;
-import com.google.common.io.Resources;
 import com.sismics.BaseTest;
 import com.sismics.docs.core.dao.dto.DocumentDto;
-import com.sismics.docs.core.model.jpa.File;
+import com.sismics.docs.core.event.model.jpa.File;
 import com.sismics.docs.core.util.format.*;
 import com.sismics.util.mime.MimeType;
 import com.sismics.util.mime.MimeTypeUtil;

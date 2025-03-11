@@ -1,4 +1,4 @@
-package com.sismics.docs.core.model.jpa;
+package com.sismics.docs.core.event.model.jpa;
 
 import com.google.common.base.MoreObjects;
 
@@ -9,50 +9,59 @@ import jakarta.persistence.Table;
 import java.util.Date;
 
 /**
- * Route model.
+ * Route.
  * 
  * @author bgamard
  */
 @Entity
-@Table(name = "T_ROUTE_MODEL")
-public class RouteModel implements Loggable {
+@Table(name = "T_ROUTE")
+public class Route implements Loggable {
     /**
-     * Route model ID.
+     * Route ID.
      */
     @Id
-    @Column(name = "RTM_ID_C", length = 36)
+    @Column(name = "RTE_ID_C", length = 36)
     private String id;
-    
+
+    /**
+     * Document ID.
+     */
+    @Column(name = "RTE_IDDOCUMENT_C", nullable = false, length = 36)
+    private String documentId;
+
     /**
      * Name.
      */
-    @Column(name = "RTM_NAME_C", nullable = false, length = 50)
+    @Column(name = "RTE_NAME_C", nullable = false, length = 50)
     private String name;
-
-    /**
-     * Data.
-     */
-    @Column(name = "RTM_STEPS_C", nullable = false, length = 5000)
-    private String steps;
 
     /**
      * Creation date.
      */
-    @Column(name = "RTM_CREATEDATE_D", nullable = false)
+    @Column(name = "RTE_CREATEDATE_D", nullable = false)
     private Date createDate;
 
     /**
      * Deletion date.
      */
-    @Column(name = "RTM_DELETEDATE_D")
+    @Column(name = "RTE_DELETEDATE_D")
     private Date deleteDate;
 
     public String getId() {
         return id;
     }
 
-    public RouteModel setId(String id) {
+    public Route setId(String id) {
         this.id = id;
+        return this;
+    }
+
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public Route setDocumentId(String documentId) {
+        this.documentId = documentId;
         return this;
     }
 
@@ -60,17 +69,8 @@ public class RouteModel implements Loggable {
         return name;
     }
 
-    public RouteModel setName(String name) {
+    public Route setName(String name) {
         this.name = name;
-        return this;
-    }
-
-    public String getSteps() {
-        return steps;
-    }
-
-    public RouteModel setSteps(String steps) {
-        this.steps = steps;
         return this;
     }
 
@@ -78,7 +78,7 @@ public class RouteModel implements Loggable {
         return createDate;
     }
 
-    public RouteModel setCreateDate(Date createDate) {
+    public Route setCreateDate(Date createDate) {
         this.createDate = createDate;
         return this;
     }
@@ -87,9 +87,14 @@ public class RouteModel implements Loggable {
         return deleteDate;
     }
 
-    public RouteModel setDeleteDate(Date deleteDate) {
+    public Route setDeleteDate(Date deleteDate) {
         this.deleteDate = deleteDate;
         return this;
+    }
+
+    @Override
+    public String toMessage() {
+        return documentId;
     }
 
     @Override
@@ -97,11 +102,8 @@ public class RouteModel implements Loggable {
         return MoreObjects.toStringHelper(this)
                 .add("id", id)
                 .add("name", name)
+                .add("documentId", documentId)
+                .add("createDate", createDate)
                 .toString();
-    }
-
-    @Override
-    public String toMessage() {
-        return name;
     }
 }

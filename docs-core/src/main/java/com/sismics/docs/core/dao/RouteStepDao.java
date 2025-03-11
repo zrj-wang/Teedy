@@ -6,7 +6,7 @@ import com.sismics.docs.core.constant.RouteStepTransition;
 import com.sismics.docs.core.constant.RouteStepType;
 import com.sismics.docs.core.dao.criteria.RouteStepCriteria;
 import com.sismics.docs.core.dao.dto.RouteStepDto;
-import com.sismics.docs.core.model.jpa.RouteStep;
+import com.sismics.docs.core.event.model.jpa.RouteStep;
 import com.sismics.docs.core.util.jpa.QueryParam;
 import com.sismics.docs.core.util.jpa.QueryUtil;
 import com.sismics.docs.core.util.jpa.SortCriteria;

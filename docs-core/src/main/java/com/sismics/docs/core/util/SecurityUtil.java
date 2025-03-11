@@ -3,8 +3,8 @@ package com.sismics.docs.core.util;
 import com.sismics.docs.core.constant.AclTargetType;
 import com.sismics.docs.core.dao.GroupDao;
 import com.sismics.docs.core.dao.UserDao;
-import com.sismics.docs.core.model.jpa.Group;
-import com.sismics.docs.core.model.jpa.User;
+import com.sismics.docs.core.event.model.jpa.Group;
+import com.sismics.docs.core.event.model.jpa.User;
 
 import java.util.List;
 

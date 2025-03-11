@@ -1,4 +1,4 @@
-package com.sismics.docs.core.model.jpa;
+package com.sismics.docs.core.event.model.jpa;
 
 import java.util.Date;
 
@@ -10,34 +10,36 @@ import jakarta.persistence.Table;
 import com.google.common.base.MoreObjects;
 
 /**
- * ACL target used to share a document.
- * Can only be used on a single ACL
+ * Role (set of base functions).
  * 
- * @author bgamard
+ * @author jtremeaux
  */
 @Entity
-@Table(name = "T_SHARE")
-public class Share {
+@Table(name = "T_ROLE")
+public class Role {
     /**
-     * Share ID.
+     * Role ID.
      */
     @Id
-    @Column(name = "SHA_ID_C", length = 36)
+    @Column(name = "ROL_ID_C", length = 36)
     private String id;
-
-    @Column(name = "SHA_NAME_C", length = 36)
+    
+    /**
+     * Role name.
+     */
+    @Column(name = "ROL_NAME_C", nullable = false, length = 50)
     private String name;
     
     /**
      * Creation date.
      */
-    @Column(name = "SHA_CREATEDATE_D", nullable = false)
+    @Column(name = "ROL_CREATEDATE_D", nullable = false)
     private Date createDate;
     
     /**
      * Deletion date.
      */
-    @Column(name = "SHA_DELETEDATE_D")
+    @Column(name = "ROL_DELETEDATE_D")
     private Date deleteDate;
 
     public String getId() {
@@ -76,6 +78,7 @@ public class Share {
     public String toString() {
         return MoreObjects.toStringHelper(this)
                 .add("id", id)
+                .add("name", name)
                 .toString();
     }
 }

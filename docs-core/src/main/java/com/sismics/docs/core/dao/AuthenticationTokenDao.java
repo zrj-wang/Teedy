@@ -1,6 +1,6 @@
 package com.sismics.docs.core.dao;
 
-import com.sismics.docs.core.model.jpa.AuthenticationToken;
+import com.sismics.docs.core.event.model.jpa.AuthenticationToken;
 import com.sismics.util.context.ThreadLocalContext;
 import org.joda.time.DateTime;
 

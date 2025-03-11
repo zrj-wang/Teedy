@@ -1,7 +1,7 @@
 package com.sismics.docs.core.util.format;
 
 import com.google.common.io.Closer;
-import com.sismics.docs.core.model.context.AppContext;
+import com.sismics.docs.core.event.model.context.AppContext;
 import com.sismics.util.mime.MimeType;
 import fr.opensagres.poi.xwpf.converter.pdf.PdfConverter;
 import fr.opensagres.poi.xwpf.converter.pdf.PdfOptions;

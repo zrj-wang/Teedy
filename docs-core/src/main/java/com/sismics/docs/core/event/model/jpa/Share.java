@@ -1,4 +1,4 @@
-package com.sismics.docs.core.model.jpa;
+package com.sismics.docs.core.event.model.jpa;
 
 import java.util.Date;
 
@@ -10,42 +10,34 @@ import jakarta.persistence.Table;
 import com.google.common.base.MoreObjects;
 
 /**
- * Role base function.
+ * ACL target used to share a document.
+ * Can only be used on a single ACL
  * 
- * @author jtremeaux
+ * @author bgamard
  */
 @Entity
-@Table(name = "T_ROLE_BASE_FUNCTION")
-public class RoleBaseFunction {
+@Table(name = "T_SHARE")
+public class Share {
     /**
-     * Role base function ID.
+     * Share ID.
      */
     @Id
-    @Column(name = "RBF_ID_C", length = 36)
+    @Column(name = "SHA_ID_C", length = 36)
     private String id;
-    
-    /**
-     * Role ID.
-     */
-    @Column(name = "RBF_IDROLE_C", nullable = false, length = 36)
-    private String roleId;
-    
-    /**
-     * Base function ID.
-     */
-    @Column(name = "RBF_IDBASEFUNCTION_C", nullable = false, length = 36)
-    private String baseFunctionId;
+
+    @Column(name = "SHA_NAME_C", length = 36)
+    private String name;
     
     /**
      * Creation date.
      */
-    @Column(name = "RBF_CREATEDATE_D", nullable = false)
+    @Column(name = "SHA_CREATEDATE_D", nullable = false)
     private Date createDate;
     
     /**
      * Deletion date.
      */
-    @Column(name = "RBF_DELETEDATE_D")
+    @Column(name = "SHA_DELETEDATE_D")
     private Date deleteDate;
 
     public String getId() {
@@ -56,20 +48,12 @@ public class RoleBaseFunction {
         this.id = id;
     }
 
-    public String getRoleId() {
-        return roleId;
+    public String getName() {
+        return name;
     }
 
-    public void setRoleId(String roleId) {
-        this.roleId = roleId;
-    }
-
-    public String getBaseFunctionId() {
-        return baseFunctionId;
-    }
-
-    public void setBaseFunctionId(String baseFunctionId) {
-        this.baseFunctionId = baseFunctionId;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Date getCreateDate() {
@@ -92,8 +76,6 @@ public class RoleBaseFunction {
     public String toString() {
         return MoreObjects.toStringHelper(this)
                 .add("id", id)
-                .add("userId", roleId)
-                .add("baseFunctionId", baseFunctionId)
                 .toString();
     }
 }

@@ -4,7 +4,7 @@ import com.google.common.base.Joiner;
 import com.sismics.docs.core.constant.AuditLogType;
 import com.sismics.docs.core.dao.criteria.RouteModelCriteria;
 import com.sismics.docs.core.dao.dto.RouteModelDto;
-import com.sismics.docs.core.model.jpa.RouteModel;
+import com.sismics.docs.core.event.model.jpa.RouteModel;
 import com.sismics.docs.core.util.AuditLogUtil;
 import com.sismics.docs.core.util.SecurityUtil;
 import com.sismics.docs.core.util.jpa.QueryParam;

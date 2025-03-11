@@ -5,7 +5,7 @@ import com.google.common.eventbus.Subscribe;
 import com.sismics.docs.core.constant.Constants;
 import com.sismics.docs.core.dao.dto.UserDto;
 import com.sismics.docs.core.event.PasswordLostEvent;
-import com.sismics.docs.core.model.jpa.PasswordRecovery;
+import com.sismics.docs.core.event.model.jpa.PasswordRecovery;
 import com.sismics.docs.core.util.TransactionUtil;
 import com.sismics.util.EmailUtil;
 import org.slf4j.Logger;

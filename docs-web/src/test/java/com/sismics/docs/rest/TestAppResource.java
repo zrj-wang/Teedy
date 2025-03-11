@@ -6,7 +6,7 @@ import com.google.common.io.Resources;
 import com.icegreen.greenmail.util.GreenMail;
 import com.icegreen.greenmail.util.GreenMailUtil;
 import com.icegreen.greenmail.util.ServerSetup;
-import com.sismics.docs.core.model.context.AppContext;
+import com.sismics.docs.core.event.model.context.AppContext;
 import com.sismics.util.filter.TokenBasedSecurityFilter;
 import jakarta.json.JsonArray;
 import jakarta.json.JsonObject;

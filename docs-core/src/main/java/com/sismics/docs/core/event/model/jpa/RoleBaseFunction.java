@@ -1,4 +1,4 @@
-package com.sismics.docs.core.model.jpa;
+package com.sismics.docs.core.event.model.jpa;
 
 import java.util.Date;
 
@@ -10,36 +10,42 @@ import jakarta.persistence.Table;
 import com.google.common.base.MoreObjects;
 
 /**
- * Role (set of base functions).
+ * Role base function.
  * 
  * @author jtremeaux
  */
 @Entity
-@Table(name = "T_ROLE")
-public class Role {
+@Table(name = "T_ROLE_BASE_FUNCTION")
+public class RoleBaseFunction {
     /**
-     * Role ID.
+     * Role base function ID.
      */
     @Id
-    @Column(name = "ROL_ID_C", length = 36)
+    @Column(name = "RBF_ID_C", length = 36)
     private String id;
     
     /**
-     * Role name.
+     * Role ID.
      */
-    @Column(name = "ROL_NAME_C", nullable = false, length = 50)
-    private String name;
+    @Column(name = "RBF_IDROLE_C", nullable = false, length = 36)
+    private String roleId;
+    
+    /**
+     * Base function ID.
+     */
+    @Column(name = "RBF_IDBASEFUNCTION_C", nullable = false, length = 36)
+    private String baseFunctionId;
     
     /**
      * Creation date.
      */
-    @Column(name = "ROL_CREATEDATE_D", nullable = false)
+    @Column(name = "RBF_CREATEDATE_D", nullable = false)
     private Date createDate;
     
     /**
      * Deletion date.
      */
-    @Column(name = "ROL_DELETEDATE_D")
+    @Column(name = "RBF_DELETEDATE_D")
     private Date deleteDate;
 
     public String getId() {
@@ -50,12 +56,20 @@ public class Role {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getRoleId() {
+        return roleId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getBaseFunctionId() {
+        return baseFunctionId;
+    }
+
+    public void setBaseFunctionId(String baseFunctionId) {
+        this.baseFunctionId = baseFunctionId;
     }
 
     public Date getCreateDate() {
@@ -78,7 +92,8 @@ public class Role {
     public String toString() {
         return MoreObjects.toStringHelper(this)
                 .add("id", id)
-                .add("name", name)
+                .add("userId", roleId)
+                .add("baseFunctionId", baseFunctionId)
                 .toString();
     }
 }

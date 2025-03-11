@@ -1,7 +1,7 @@
 package com.sismics.docs.core.util;
 
 import com.google.common.base.Strings;
-import com.sismics.docs.core.model.context.AppContext;
+import com.sismics.docs.core.event.model.context.AppContext;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import javax.crypto.Cipher;

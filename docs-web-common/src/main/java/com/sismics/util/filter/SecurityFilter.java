@@ -6,7 +6,7 @@ import com.sismics.docs.core.dao.GroupDao;
 import com.sismics.docs.core.dao.RoleBaseFunctionDao;
 import com.sismics.docs.core.dao.criteria.GroupCriteria;
 import com.sismics.docs.core.dao.dto.GroupDto;
-import com.sismics.docs.core.model.jpa.User;
+import com.sismics.docs.core.event.model.jpa.User;
 import com.sismics.security.AnonymousPrincipal;
 import com.sismics.security.UserPrincipal;
 import org.joda.time.DateTimeZone;

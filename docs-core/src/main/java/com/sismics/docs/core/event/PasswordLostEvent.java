@@ -2,7 +2,7 @@ package com.sismics.docs.core.event;
 
 import com.google.common.base.MoreObjects;
 import com.sismics.docs.core.dao.dto.UserDto;
-import com.sismics.docs.core.model.jpa.PasswordRecovery;
+import com.sismics.docs.core.event.model.jpa.PasswordRecovery;
 
 /**
  * Event fired on user's password lost event.
