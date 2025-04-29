@@ -33,5 +33,6 @@ public class TestJpa extends BaseTransactionalTest {
         // Delete the created user
         userDao.delete("testJpa", user.getId());
         TransactionUtil.commit();
+
     }
 }
