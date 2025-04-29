@@ -2,7 +2,7 @@ package com.sismics.docs.core.dao;
 
 import com.sismics.docs.core.constant.AuditLogType;
 import com.sismics.docs.core.dao.dto.CommentDto;
-import com.sismics.docs.core.model.jpa.Comment;
+import com.sismics.docs.core.event.model.jpa.Comment;
 import com.sismics.docs.core.util.AuditLogUtil;
 import com.sismics.util.context.ThreadLocalContext;
 

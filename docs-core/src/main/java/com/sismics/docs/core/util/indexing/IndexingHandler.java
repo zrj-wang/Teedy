@@ -3,8 +3,8 @@ package com.sismics.docs.core.util.indexing;
 import com.sismics.docs.core.constant.PermType;
 import com.sismics.docs.core.dao.criteria.DocumentCriteria;
 import com.sismics.docs.core.dao.dto.DocumentDto;
-import com.sismics.docs.core.model.jpa.Document;
-import com.sismics.docs.core.model.jpa.File;
+import com.sismics.docs.core.event.model.jpa.Document;
+import com.sismics.docs.core.event.model.jpa.File;
 import com.sismics.docs.core.util.jpa.PaginatedList;
 import com.sismics.docs.core.util.jpa.SortCriteria;
 

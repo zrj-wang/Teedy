@@ -3,7 +3,7 @@ package com.sismics.docs.core.listener.async;
 import com.google.common.eventbus.AllowConcurrentEvents;
 import com.google.common.eventbus.Subscribe;
 import com.sismics.docs.core.event.AclDeletedAsyncEvent;
-import com.sismics.docs.core.model.context.AppContext;
+import com.sismics.docs.core.event.model.context.AppContext;
 import com.sismics.docs.core.util.TransactionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

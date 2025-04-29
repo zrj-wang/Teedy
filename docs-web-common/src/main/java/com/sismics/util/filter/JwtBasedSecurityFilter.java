@@ -12,7 +12,7 @@ import java.util.Base64;
 
 import com.sismics.docs.core.constant.Constants;
 import com.sismics.docs.core.dao.UserDao;
-import com.sismics.docs.core.model.jpa.User;
+import com.sismics.docs.core.event.model.jpa.User;
 import jakarta.json.Json;
 import jakarta.json.JsonArray;
 import jakarta.json.JsonObject;

@@ -7,7 +7,7 @@ import com.sismics.docs.core.dao.MetadataDao;
 import com.sismics.docs.core.dao.criteria.MetadataCriteria;
 import com.sismics.docs.core.dao.dto.DocumentMetadataDto;
 import com.sismics.docs.core.dao.dto.MetadataDto;
-import com.sismics.docs.core.model.jpa.DocumentMetadata;
+import com.sismics.docs.core.event.model.jpa.DocumentMetadata;
 import com.sismics.docs.core.util.jpa.SortCriteria;
 
 import jakarta.json.Json;

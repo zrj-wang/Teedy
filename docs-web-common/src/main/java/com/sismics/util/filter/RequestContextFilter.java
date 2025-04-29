@@ -1,6 +1,6 @@
 package com.sismics.util.filter;
 
-import com.sismics.docs.core.model.context.AppContext;
+import com.sismics.docs.core.event.model.context.AppContext;
 import com.sismics.docs.core.util.DirectoryUtil;
 import com.sismics.docs.core.util.TransactionUtil;
 import com.sismics.util.EnvironmentUtil;

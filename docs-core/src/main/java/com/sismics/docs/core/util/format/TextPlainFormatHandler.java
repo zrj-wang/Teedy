@@ -3,7 +3,7 @@ package com.sismics.docs.core.util.format;
 import com.google.common.io.Closer;
 import com.lowagie.text.*;
 import com.lowagie.text.pdf.PdfWriter;
-import com.sismics.docs.core.model.context.AppContext;
+import com.sismics.docs.core.event.model.context.AppContext;
 import com.sismics.util.mime.MimeType;
 import org.apache.pdfbox.io.MemoryUsageSetting;
 import org.apache.pdfbox.pdmodel.PDDocument;

@@ -1,7 +1,7 @@
 package com.sismics.docs.core.dao;
 
 import com.sismics.docs.core.dao.dto.ContributorDto;
-import com.sismics.docs.core.model.jpa.Contributor;
+import com.sismics.docs.core.event.model.jpa.Contributor;
 import com.sismics.util.context.ThreadLocalContext;
 
 import jakarta.persistence.EntityManager;

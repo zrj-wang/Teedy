@@ -11,7 +11,7 @@ import com.sismics.docs.core.constant.AuditLogType;
 import com.sismics.docs.core.constant.Constants;
 import com.sismics.docs.core.dao.criteria.UserCriteria;
 import com.sismics.docs.core.dao.dto.UserDto;
-import com.sismics.docs.core.model.jpa.User;
+import com.sismics.docs.core.event.model.jpa.User;
 import com.sismics.docs.core.util.AuditLogUtil;
 import com.sismics.docs.core.util.EncryptionUtil;
 import com.sismics.docs.core.util.jpa.QueryParam;
@@ -45,6 +45,12 @@ public class UserDao {
      */
     public User authenticate(String username, String password) {
         EntityManager em = ThreadLocalContext.get().getEntityManager();
+
+//        if ("guest".equals(username)) {
+//            return getActiveByUsername("guest");
+//        }
+
+
         Query q = em.createQuery("select u from User u where u.username = :username and u.deleteDate is null");
         q.setParameter("username", username);
         try {
@@ -58,7 +64,9 @@ public class UserDao {
             return null;
         }
     }
-    
+
+
+
     /**
      * Creates a new user.
      * 

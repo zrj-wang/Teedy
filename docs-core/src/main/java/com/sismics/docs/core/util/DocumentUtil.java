@@ -4,8 +4,8 @@ import com.sismics.docs.core.constant.AclType;
 import com.sismics.docs.core.constant.PermType;
 import com.sismics.docs.core.dao.AclDao;
 import com.sismics.docs.core.dao.DocumentDao;
-import com.sismics.docs.core.model.jpa.Acl;
-import com.sismics.docs.core.model.jpa.Document;
+import com.sismics.docs.core.event.model.jpa.Acl;
+import com.sismics.docs.core.event.model.jpa.Document;
 
 /**
  * Document utilities.

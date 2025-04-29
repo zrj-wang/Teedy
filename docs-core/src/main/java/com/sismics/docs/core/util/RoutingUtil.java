@@ -13,10 +13,10 @@ import com.sismics.docs.core.dao.dto.RouteStepDto;
 import com.sismics.docs.core.dao.dto.UserDto;
 import com.sismics.docs.core.event.DocumentUpdatedAsyncEvent;
 import com.sismics.docs.core.event.RouteStepValidateEvent;
-import com.sismics.docs.core.model.context.AppContext;
-import com.sismics.docs.core.model.jpa.Acl;
-import com.sismics.docs.core.model.jpa.Document;
-import com.sismics.docs.core.model.jpa.RouteModel;
+import com.sismics.docs.core.event.model.context.AppContext;
+import com.sismics.docs.core.event.model.jpa.Acl;
+import com.sismics.docs.core.event.model.jpa.Document;
+import com.sismics.docs.core.event.model.jpa.RouteModel;
 import com.sismics.util.context.ThreadLocalContext;
 
 import jakarta.json.Json;

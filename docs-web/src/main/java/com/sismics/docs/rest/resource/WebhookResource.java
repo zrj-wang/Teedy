@@ -4,7 +4,7 @@ import com.sismics.docs.core.constant.WebhookEvent;
 import com.sismics.docs.core.dao.WebhookDao;
 import com.sismics.docs.core.dao.criteria.WebhookCriteria;
 import com.sismics.docs.core.dao.dto.WebhookDto;
-import com.sismics.docs.core.model.jpa.Webhook;
+import com.sismics.docs.core.event.model.jpa.Webhook;
 import com.sismics.docs.core.util.jpa.SortCriteria;
 import com.sismics.docs.rest.constant.BaseFunction;
 import com.sismics.rest.exception.ForbiddenClientException;

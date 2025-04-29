@@ -2,7 +2,7 @@ package com.sismics.util.filter;
 
 import com.google.common.base.Strings;
 import com.sismics.docs.core.dao.UserDao;
-import com.sismics.docs.core.model.jpa.User;
+import com.sismics.docs.core.event.model.jpa.User;
 
 import jakarta.servlet.FilterConfig;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,7 +1,7 @@
 package com.sismics.docs.core.dao;
 
 import com.sismics.docs.core.constant.ConfigType;
-import com.sismics.docs.core.model.jpa.Config;
+import com.sismics.docs.core.event.model.jpa.Config;
 import com.sismics.util.context.ThreadLocalContext;
 
 import jakarta.persistence.EntityManager;

@@ -4,7 +4,7 @@ import com.sismics.docs.core.constant.MetadataType;
 import com.sismics.docs.core.dao.MetadataDao;
 import com.sismics.docs.core.dao.criteria.MetadataCriteria;
 import com.sismics.docs.core.dao.dto.MetadataDto;
-import com.sismics.docs.core.model.jpa.Metadata;
+import com.sismics.docs.core.event.model.jpa.Metadata;
 import com.sismics.docs.core.util.jpa.SortCriteria;
 import com.sismics.docs.rest.constant.BaseFunction;
 import com.sismics.rest.exception.ForbiddenClientException;

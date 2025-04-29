@@ -2,7 +2,7 @@ package com.sismics.docs.core.dao;
 
 import com.sismics.docs.core.constant.MetadataType;
 import com.sismics.docs.core.dao.dto.DocumentMetadataDto;
-import com.sismics.docs.core.model.jpa.DocumentMetadata;
+import com.sismics.docs.core.event.model.jpa.DocumentMetadata;
 import com.sismics.util.context.ThreadLocalContext;
 
 import jakarta.persistence.EntityManager;

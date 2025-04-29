@@ -4,16 +4,14 @@ import com.sismics.docs.core.dao.TagDao;
 import com.sismics.docs.core.dao.criteria.DocumentCriteria;
 import com.sismics.docs.core.dao.criteria.TagCriteria;
 import com.sismics.docs.core.dao.dto.TagDto;
-import com.sismics.docs.core.model.jpa.Tag;
-import com.sismics.docs.core.model.jpa.User;
+import com.sismics.docs.core.event.model.jpa.Tag;
+import com.sismics.docs.core.event.model.jpa.User;
 import com.sismics.docs.rest.BaseTransactionalTest;
 import com.sismics.util.mime.MimeType;
-import org.apache.poi.ss.formula.functions.T;
 import org.joda.time.DateTime;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;

@@ -3,7 +3,7 @@ package com.sismics.docs.core.dao;
 import com.google.common.base.Joiner;
 import com.sismics.docs.core.dao.criteria.WebhookCriteria;
 import com.sismics.docs.core.dao.dto.WebhookDto;
-import com.sismics.docs.core.model.jpa.Webhook;
+import com.sismics.docs.core.event.model.jpa.Webhook;
 import com.sismics.docs.core.util.jpa.QueryParam;
 import com.sismics.docs.core.util.jpa.QueryUtil;
 import com.sismics.docs.core.util.jpa.SortCriteria;

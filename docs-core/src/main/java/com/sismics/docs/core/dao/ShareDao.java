@@ -1,6 +1,6 @@
 package com.sismics.docs.core.dao;
 
-import com.sismics.docs.core.model.jpa.Share;
+import com.sismics.docs.core.event.model.jpa.Share;
 import com.sismics.util.context.ThreadLocalContext;
 
 import jakarta.persistence.EntityManager;

@@ -1,6 +1,6 @@
 package com.sismics.rest.util;
 
-import com.sismics.docs.core.model.jpa.File;
+import com.sismics.docs.core.event.model.jpa.File;
 import com.sismics.docs.core.util.DirectoryUtil;
 import com.sismics.docs.core.util.FileUtil;
 import com.sismics.rest.exception.ServerException;

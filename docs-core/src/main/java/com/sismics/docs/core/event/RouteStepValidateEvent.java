@@ -2,7 +2,7 @@ package com.sismics.docs.core.event;
 
 import com.google.common.base.MoreObjects;
 import com.sismics.docs.core.dao.dto.UserDto;
-import com.sismics.docs.core.model.jpa.Document;
+import com.sismics.docs.core.event.model.jpa.Document;
 
 /**
  * Event fired on route step validation event.

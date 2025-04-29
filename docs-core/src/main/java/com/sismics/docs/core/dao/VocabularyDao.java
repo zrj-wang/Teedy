@@ -1,6 +1,6 @@
 package com.sismics.docs.core.dao;
 
-import com.sismics.docs.core.model.jpa.Vocabulary;
+import com.sismics.docs.core.event.model.jpa.Vocabulary;
 import com.sismics.util.context.ThreadLocalContext;
 
 import jakarta.persistence.EntityManager;

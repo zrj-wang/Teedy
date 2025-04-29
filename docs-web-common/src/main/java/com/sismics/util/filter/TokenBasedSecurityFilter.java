@@ -2,8 +2,8 @@ package com.sismics.util.filter;
 
 import com.sismics.docs.core.dao.AuthenticationTokenDao;
 import com.sismics.docs.core.dao.UserDao;
-import com.sismics.docs.core.model.jpa.AuthenticationToken;
-import com.sismics.docs.core.model.jpa.User;
+import com.sismics.docs.core.event.model.jpa.AuthenticationToken;
+import com.sismics.docs.core.event.model.jpa.User;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
