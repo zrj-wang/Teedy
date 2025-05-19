@@ -42,7 +42,7 @@ jobs:
       - uses: docker/metadata-action@v3
         id: metadata
         with:
-          images: xx/Teedy
+          images: 12210403/teedy-app
           tags: |
             type=raw,value=latest
       - uses: docker/build-push-action@v4
