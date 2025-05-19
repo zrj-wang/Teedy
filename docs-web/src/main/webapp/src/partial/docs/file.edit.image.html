@@ -1,0 +1,44 @@
+<!-- partial/docs/file.edit.image.html -->
+<div class="modal-header bg-white">
+    <h4 class="modal-title">edit</h4>
+</div>
+
+<!-- 主体部分，带背景 -->
+<div class="modal-body bg-white p-4">
+
+    <!-- 工具栏按钮分组 -->
+    <div class="d-flex justify-content-between flex-wrap gap-2 mb-4">
+        <div class="btn-group">
+            <button class="btn btn-outline-dark" ng-click="rotate(-90)">
+                <span class="fas fa-undo"></span> left
+            </button>
+            <button class="btn btn-outline-dark" ng-click="rotate(90)">
+                <span class="fas fa-redo"></span> right
+            </button>
+        </div>
+
+
+
+        <div class="btn-group">
+            <button class="btn btn-outline-warning" ng-click="reset()">
+                <span class="fas fa-sync-alt"></span> reset
+            </button>
+        </div>
+    </div>
+
+    <!-- 图片预览 -->
+    <div class="text-center">
+        <img id="image-to-edit"
+             ng-src="../api/file/{{file.id}}/data?raw=true"
+             class="img-thumbnail shadow"
+             style="max-width: 120%; max-height: 100vh;" />
+    </div>
+</div>
+
+<!-- 页脚按钮：左右分布 -->
+<div class="modal-footer d-flex justify-content-between">
+    <button class="btn btn-primary" ng-click="save()">
+        <span class="fas fa-save"></span> save
+    </button>
+    <button class="btn btn-secondary" ng-click="cancel()">cancel</button>
+</div>
