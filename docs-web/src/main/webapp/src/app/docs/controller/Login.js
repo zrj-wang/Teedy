@@ -70,7 +70,8 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
         $dialog.messageBox(title, msg, btns);
       }, function (err) {
         var title = $translate.instant('register.error_title');
-        var msg = err.data?.message || $translate.instant('register.error_message');
+        var msg = (err.data && err.data.message) || $translate.instant('register.error_message');
+
         var btns = [{ result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-danger' }];
         $dialog.messageBox(title, msg, btns);
       });

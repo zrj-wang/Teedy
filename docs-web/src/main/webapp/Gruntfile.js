@@ -10,6 +10,7 @@ module.exports = function(grunt) {
     ngAnnotate: {
       options: {
         singleQuotes: true
+        ecma: 6 // 👈 关键：开启 ES6 支持
       },
       dist: {
         files: [{
