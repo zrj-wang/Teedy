@@ -49,6 +49,47 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
     });
   };
 
+    // Register new user
+    $scope.register = function () {
+      if (!$scope.user || !$scope.user.username || !$scope.user.password) {
+        var title = $translate.instant('register.missing_fields_title');
+        var msg = $translate.instant('register.missing_fields_message');
+        var btns = [{ result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-primary' }];
+        $dialog.messageBox(title, msg, btns);
+        return;
+      }
+
+      Restangular.all('register').post({
+        username: $scope.user.username,
+        email: $scope.user.username + '@example.com',  // 临时默认邮箱
+        password: $scope.user.password
+      }).then(function () {
+        var title = $translate.instant('register.success_title');
+        var msg = $translate.instant('register.success_message');
+        var btns = [{ result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-primary' }];
+        $dialog.messageBox(title, msg, btns);
+      }, function (err) {
+        var title = $translate.instant('register.error_title');
+        var msg = err.data?.message || $translate.instant('register.error_message');
+        var btns = [{ result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-danger' }];
+        $dialog.messageBox(title, msg, btns);
+      });
+    };
+
+    // 判断是否是 admin
+    $scope.isAdmin = function () {
+      return $scope.user && $scope.user.username === 'admin' && $scope.user.password === 'admin';
+    };
+
+    // 跳转到审核页面（可以直接跳一个本地 html 先测试）
+    $scope.goToReviewPage = function () {
+      window.location.href = '/review.html';
+    };
+
+
+
+
+
   // Password lost
   $scope.openPasswordLost = function () {
     $uibModal.open({

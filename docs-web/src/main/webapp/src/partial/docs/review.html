@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>注册审核</title>
+    <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+    button {
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+<h1>待审核注册请求</h1>
+
+<table id="requestTable">
+    <thead>
+    <tr>
+        <th>用户名</th>
+        <th>邮箱</th>
+        <th>请求时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    // 加载待审核注册请求
+    function loadRequests() {
+      fetch('/api/register/pending')
+        .then(response => response.json())
+        .then(data => {
+          const tbody = document.querySelector('#requestTable tbody');
+          tbody.innerHTML = ''; // 清空现有内容
+
+          data.forEach(request => {
+            const row = document.createElement('tr');
+
+            row.innerHTML = `
+              <td>${request.username}</td>
+              <td>${request.email}</td>
+              <td>${new Date(request.createDate).toLocaleString()}</td>
+              <td>
+                <button onclick="approveRequest('${request.id}')">批准</button>
+                <button onclick="rejectRequest('${request.id}')">拒绝</button>
+              </td>
+            `;
+
+            tbody.appendChild(row);
+          });
+        });
+    }
+
+    // 批准请求
+    function approveRequest(requestId) {
+      fetch('/api/register/approve', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `requestId=${requestId}&adminId=admin`
+      }).then(() => {
+        alert('已批准');
+        loadRequests();
+      });
+    }
+
+    // 拒绝请求
+    function rejectRequest(requestId) {
+      fetch('/api/register/reject', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `requestId=${requestId}`
+      }).then(() => {
+        alert('已拒绝');
+        loadRequests();
+      });
+    }
+
+    // 初始化加载
+    loadRequests();
+  </script>
+</body>
+</html>

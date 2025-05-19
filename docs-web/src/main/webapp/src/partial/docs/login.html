@@ -74,6 +74,18 @@
             </div>
           </div>
 
+          <div class="row" style="margin-top: 10px;">
+            <div class="col-md-12 text-center">
+              <button type="button" class="btn btn-default" ng-click="register()">注册</button>
+
+              <button type="button" class="btn btn-warning btn-block" ng-if="isAdmin()" ng-click="goToReviewPage()">
+                <span class="fas fa-check-circle"></span> 审核注册请求
+              </button>
+
+            </div>
+          </div>
+
+
           <p class="text-center" ng-if="app.guest_login">&nbsp;</p>
 
           <button type="submit" class="btn btn-default btn-block" ng-if="app.guest_login" ng-click="loginAsGuest()">

@@ -5,5 +5,21 @@
              version="3.0">
   <persistence-unit name="transactions-optional" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+    <!-- 声明你自己的实体类路径（建议至少包含 RegisterRequest） -->
+    <class>com.sismics.docs.core.service.RegisterRequest</class>
+
+    <properties>
+      <!-- JDBC 配置 -->
+      <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
+      <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+      <property name="jakarta.persistence.jdbc.password" value="你的密码"/>
+
+      <!-- Hibernate 配置 -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.show_sql" value="true"/>
+    </properties>
   </persistence-unit>
 </persistence>
