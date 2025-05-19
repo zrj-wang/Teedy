@@ -1,8 +1,5 @@
 'use strict';
 
-/**
- * Login controller.
- */
 angular.module('docs').controller('Login', function(Restangular, $scope, $rootScope, $state, $stateParams, $dialog, User, $translate, $uibModal) {
   $scope.codeRequired = false;
 
@@ -19,7 +16,7 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
     };
     $scope.login();
   };
-  
+
   // Login
   $scope.login = function() {
     User.login($scope.user).then(function() {
@@ -37,10 +34,8 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
       }
     }, function(data) {
       if (data.data.type === 'ValidationCodeRequired') {
-        // A TOTP validation code is required to login
         $scope.codeRequired = true;
       } else {
-        // Login truly failed
         var title = $translate.instant('login.login_failed_title');
         var msg = $translate.instant('login.login_failed_message');
         var btns = [{result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-primary'}];
@@ -49,49 +44,41 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
     });
   };
 
-    // Register new user
-    $scope.register = function () {
-      if (!$scope.user || !$scope.user.username || !$scope.user.password) {
-        var title = $translate.instant('register.missing_fields_title');
-        var msg = $translate.instant('register.missing_fields_message');
-        var btns = [{ result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-primary' }];
-        $dialog.messageBox(title, msg, btns);
-        return;
-      }
+  // Register new user
+  $scope.register = function () {
+    if (!$scope.user || !$scope.user.username || !$scope.user.password) {
+      var title = $translate.instant('register.missing_fields_title');
+      var msg = $translate.instant('register.missing_fields_message');
+      var btns = [{ result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-primary' }];
+      $dialog.messageBox(title, msg, btns);
+      return;
+    }
 
-      Restangular.all('register').post({
-        username: $scope.user.username,
-        email: $scope.user.username + '@example.com',  // 临时默认邮箱
-        password: $scope.user.password
-      }).then(function () {
-        var title = $translate.instant('register.success_title');
-        var msg = $translate.instant('register.success_message');
-        var btns = [{ result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-primary' }];
-        $dialog.messageBox(title, msg, btns);
-      }, function (err) {
-        var title = $translate.instant('register.error_title');
-        var msg = (err.data && err.data.message) || $translate.instant('register.error_message');
+    Restangular.all('register').post({
+      username: $scope.user.username,
+      email: $scope.user.username + '@example.com',
+      password: $scope.user.password
+    }).then(function () {
+      var title = $translate.instant('register.success_title');
+      var msg = $translate.instant('register.success_message');
+      var btns = [{ result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-primary' }];
+      $dialog.messageBox(title, msg, btns);
+    }, function (err) {
+      var title = $translate.instant('register.error_title');
+      var msg = (err.data && err.data.message) || $translate.instant('register.error_message');
+      var btns = [{ result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-danger' }];
+      $dialog.messageBox(title, msg, btns);
+    });
+  };
 
-        var btns = [{ result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-danger' }];
-        $dialog.messageBox(title, msg, btns);
-      });
-    };
+  $scope.isAdmin = function () {
+    return $scope.user && $scope.user.username === 'admin' && $scope.user.password === 'admin';
+  };
 
-    // 判断是否是 admin
-    $scope.isAdmin = function () {
-      return $scope.user && $scope.user.username === 'admin' && $scope.user.password === 'admin';
-    };
+  $scope.goToReviewPage = function () {
+    window.location.href = '/review.html';
+  };
 
-    // 跳转到审核页面（可以直接跳一个本地 html 先测试）
-    $scope.goToReviewPage = function () {
-      window.location.href = '/review.html';
-    };
-
-
-
-
-
-  // Password lost
   $scope.openPasswordLost = function () {
     $uibModal.open({
       templateUrl: 'partial/docs/passwordlost.html',
@@ -101,7 +88,6 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
         return;
       }
 
-      // Send a password lost email
       Restangular.one('user').post('password_lost', {
         username: username
       }).then(function () {
